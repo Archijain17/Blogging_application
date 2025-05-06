@@ -44,11 +44,6 @@ public class PostController {
 	@Value("${project.image}") 	
 	private String path;
 	
-	//public PostController(PostService postService,FileService fileService) {
-	//	this.postService=postService;
-	//	this.fileService=fileService;
-		
-	//}
 	
 	//	create  	
 	@PostMapping("/user/{userId}/category/{categoryId}/posts") 
