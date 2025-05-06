@@ -103,12 +103,11 @@ public class UserServiceImpl implements UserService {
 	public UserDto registerNewUser(UserDto userDto) {
 		// TODO Auto-generated method stub
 		User user=this.modelMapper.map(userDto, User.class);
-		//encode password
+		
 		user.setPassword(this.passwordEncoder.encode(user.getPassword()));
 		
-		//roles
 		Role role=this.roleRepo.findById(AppConstants.NORMAL_USER).get();
-		Hibernate.initialize(user.getRoles().add(role));
+		user.getRoles().add(role);
 		User newUser =this.userRepo.save(user);
 		
 		return this.modelMapper.map(newUser, UserDto.class);
