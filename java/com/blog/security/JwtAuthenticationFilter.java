@@ -29,18 +29,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	protected void doFilterInternal(jakarta.servlet.http.HttpServletRequest request,
 			jakarta.servlet.http.HttpServletResponse response, jakarta.servlet.FilterChain filterChain)
 			throws jakarta.servlet.ServletException, IOException {
-		// TODO Auto-generated method stub
-
-//		1. get token 
+		
 
 		String requestToken = request.getHeader("Authorization");
 		Enumeration<String> headerNames = request.getHeaderNames();
 
-		while(headerNames.hasMoreElements())
-		{
-			System.out.println(headerNames.nextElement());
-		}
-		// Bearer 2352523sdgsg
+		
 
 		System.out.println(requestToken);
 
